@@ -11,8 +11,24 @@ export class newNote {
 }
 
 export class domutil {
-    notes (titleI:string, notesI:string, doneI:boolean  ) {
+    getArrayLength (array:any[]) {
+        return array.length
+    }
+    setID (array:any[]) {
+        let temp = 0
+        let temp1 = 0
+        while (temp==0){
+        let id = `task${this.getArrayLength(array) + temp1}`
+        temp1++
+        if (array.includes(id)!= true){
+            temp = 1
+            return id
+        }
+     }
+    }
+    notes (titleI:string, notesI:string, doneI:boolean, array: any[]  ) {
         const body = document.createElement('article')
+        body.id = this.setID(array)
 
         const title = document.createElement('h3')
         title.textContent = titleI
@@ -43,4 +59,7 @@ export class buttonEvents {
     addTask () {
         const add = document.querySelector('.navbar__addItem')
     }
+    getIndex (value:HTMLBodyElement) {
+        return value.id
+    }   
 }
