@@ -61,6 +61,7 @@ body {
 }
 
 /*//////////////////////// Notes areas ////////////////////////////*/
+
 .content__notes {
   display: grid;
   grid-template-columns: 1fr;

@@ -1,4 +1,6 @@
 const book = require('../img/book.svg');
+import { utils } from "..";
+import { taskList } from "..";
 
 
 export class newNote {
@@ -13,10 +15,10 @@ export class newNote {
 }
 
 export class domutil {
-    getArrayLength (array:any[]) {
+    getArrayLength (array:string[]) {
         return array.length
     }
-    setID (array:any[]) {
+    setID (array:string[]) {
         let temp = 0
         let temp1 = 0
         while (temp==0){
@@ -29,7 +31,7 @@ export class domutil {
         }
      }
     }
-    notes (titleI:string, notesI:string, doneI:boolean, array: any[]  ) {
+    notes (titleI:string, notesI:string, doneI:boolean, array: string[]  ) {
         const body = document.createElement('article')
         body.classList.add('note__body')
         body.id = this.setID(array)
@@ -75,8 +77,14 @@ export class domutil {
 }
 
 export class buttonEvents {
-    addTask () {
+    addTask (parent:Element,) {
         const add = document.querySelector('.navbar__addItem')
+        add.addEventListener('click', () =>{
+            const temp = new newNote('A short title', '', false)
+            const element = utils.notes(temp.title, temp.notes, temp.finished, taskList)
+            parent.appendChild(element)
+            console.log(taskList)
+        })
     }
     getIndex (value:HTMLBodyElement) {
         return value.id
