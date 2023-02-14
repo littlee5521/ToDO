@@ -15,7 +15,7 @@
       <section class="navbar__section">
         <h1 class="navbar__title">To-Do</h1>
       </section>
-      <section class="navbar__section">
+      <section class="navbar__section nav-left">
         <button class="navbar__addItem">+</button>
         <button class="navbar__progress"></button>
       </section>
@@ -29,11 +29,19 @@
           <div class="note-body__divider">
             <button class="note_finished"></button>
             <h3 class="note__title">Title Short please</h3>
-            <img src="./img/book.svg" alt="" class="notes__book" />
+            <button class="book__button">
+              <img src="./img/book.svg" alt="" class="notes__book" />
+            </button>
           </div>
-          <div class="note-body__divider"></div>
+          <div class="note-body__divider importance">
+            <button class="note_finished"></button>
+          </div>
         </article>
       </section>
     </main>
+    <div class="overlay">
+      <button>X</button>
+      <textarea class="text" name="" id="" cols="30" rows="10"></textarea>
+    </div>
   </body>
 </html>

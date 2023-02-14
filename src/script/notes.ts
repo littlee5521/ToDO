@@ -30,5 +30,7 @@ export class domutil {
 
         return body
     }
-    
+    overlay (){
+        const overlay = document.createElement('article')
+    }
 }

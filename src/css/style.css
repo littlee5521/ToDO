@@ -7,17 +7,30 @@ body {
 
   background-color: #f0e6e4;
 }
-
+/*//////////////////////// nAVbaR ////////////////////////////*/
 .navbar {
   margin: auto;
+  padding-top: 1%;
   width: max(280px, 70%);
-  padding: 1% 1%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   font-size: max(2vw, 16px);
+  align-items: baseline;
 }
 .navbar__title {
   text-align: center;
+}
+
+.navbar__addItem {
+  font-size: max(1.5rem, 1.5vw);
+  min-width: 30px;
+  width: 2vw;
+  border-radius: 10000px;
+  margin-bottom: 1%;
+  background-color: #b9b1af;
+}
+.navbar__addItem:hover {
+  background-color: #706c6b;
 }
 /*                        */
 
@@ -67,8 +80,16 @@ body {
 
 .note-body__divider {
   display: grid;
-  grid-template-columns: 0.1fr 0.2fr 0.1fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
   align-items: center;
+  gap: 16px;
+  width: fit-content;
+}
+
+.importance {
+  grid-template-columns: 1fr;
+  justify-self: end;
+  padding-right: 2%;
 }
 
 .note_finished {
@@ -81,8 +102,47 @@ body {
   background-color: #706c6b;
 }
 .note__title {
-  display: inline;
+  overflow-wrap: break-word;
 }
+
+.book__button {
+  width: fit-content;
+  background-color: #b9b1af;
+  border: white 2px solid;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 12px;
+}
+
+.book__button:hover {
+  background-color: #706c6b;
+}
+.book__button:active {
+  border: white 2px solid;
+  border-left: none;
+  border-top: none;
+}
+
 .notes__book {
   width: min(40px, 7vw);
+}
+.overlay {
+  background-color: #b9b1af;
+  position: fixed;
+  width: min(700px, 85%);
+  height: max(700px, 20%);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 100px 100px 100vh 100vw rgba(0, 0, 0, 0.59);
+}
+.text {
+  resize: none;
+  background-color: #b9b1af;
+  width: 99.5%;
+  height: 100%;
+  margin-top: 5%;
+  border: none;
 }
