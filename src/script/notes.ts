@@ -1,12 +1,11 @@
+
 export class newNote {
     title:string = ''
     notes:string = ''
-    tag:string = ''
     finished:boolean
-    constructor (title:string, notes:string, tag:string, done:boolean){
+    constructor (title:string, notes:string, done:boolean){
         this.title = title
         this.notes = notes
-        this.tag = tag
         this.finished = done
     }
 }
@@ -32,5 +31,16 @@ export class domutil {
     }
     overlay (){
         const overlay = document.createElement('article')
+        overlay.classList.add('overlay')
+
+        const textArea = document.createElement('textarea')
+        textArea.classList.add('text')
+        return overlay
+    }
+}
+
+export class buttonEvents {
+    addTask () {
+        const add = document.querySelector('.navbar__addItem')
     }
 }
