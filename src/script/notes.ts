@@ -1,3 +1,5 @@
+const book = require('../img/book.svg');
+
 
 export class newNote {
     title:string = ''
@@ -22,26 +24,43 @@ export class domutil {
         temp1++
         if (array.includes(id)!= true){
             temp = 1
+            array.push(id)
             return id
         }
      }
     }
     notes (titleI:string, notesI:string, doneI:boolean, array: any[]  ) {
         const body = document.createElement('article')
+        body.classList.add('note__body')
         body.id = this.setID(array)
 
-        const title = document.createElement('h3')
-        title.textContent = titleI
+        const rightDiv = document.createElement('div')
+        rightDiv.classList.add('note-body__divider')
+            const isFinished = document.createElement('button')
+            isFinished.classList.add('note_finished')
+            rightDiv.appendChild(isFinished)
 
-        const notes = document.createElement('p')
-        notes.textContent = notesI
+            const noteTitle = document.createElement('h3')
+            noteTitle.classList.add('note__title')
+            noteTitle.textContent = titleI
+            rightDiv.appendChild(noteTitle)
 
-        const done = document.createElement('input')
-        done.checked = doneI
+            const bookButton = document.createElement('button')
+            bookButton.classList.add('book__button')
+                const bookImg = document.createElement('img')
+                bookImg.classList.add('notes__book')
+                bookImg.src = book
+                bookButton.appendChild(bookImg)
+            rightDiv.appendChild(bookButton)
 
-        body.appendChild(title)
-        body.appendChild(notes)
-        body.appendChild(done)
+        const leftDiv = document.createElement('div')
+        leftDiv.classList.add('note-body__divider')
+        leftDiv.classList.add('importance')
+            const done = document.createElement('button')
+            done.classList.add('note_finished')
+            leftDiv.appendChild(done)
+        body.appendChild(rightDiv)
+        body.appendChild(leftDiv)
 
         return body
     }

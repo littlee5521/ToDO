@@ -1,6 +1,6 @@
 export class relations {
     existingTask () {
-        let existingTask: string[]  = []
+        let existingTask: any[]  = []
         return existingTask
     }
 }

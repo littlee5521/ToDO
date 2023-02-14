@@ -65,6 +65,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  align-content: flex-start;
 }
 
 .note__body {
@@ -103,8 +104,11 @@ body {
 }
 .note__title {
   overflow-wrap: break-word;
+  padding: 6px;
 }
-
+.note__title:hover {
+  background-color: #706c6b;
+}
 .book__button {
   width: fit-content;
   background-color: #b9b1af;
