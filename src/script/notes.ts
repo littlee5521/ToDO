@@ -1,12 +1,14 @@
 const book = require('../img/book.svg');
 import { utils } from "..";
 import { taskList } from "..";
+import { noteObject } from "..";
 
 
 export class newNote {
     title:string = ''
     notes:string = ''
     finished:boolean
+    id:string = 'temp'
     constructor (title:string, notes:string, done:boolean){
         this.title = title
         this.notes = notes
@@ -15,6 +17,8 @@ export class newNote {
 }
 
 export class domutil {
+    currentBucket:string = 'home'
+
     getArrayLength (array:string[]) {
         return array.length
     }
@@ -76,14 +80,18 @@ export class domutil {
     }
 }
 
+
+// this handles the button for adding 
+//  the dom stuff and also creates the objs
 export class buttonEvents {
     addTask (parent:Element,) {
         const add = document.querySelector('.navbar__addItem')
         add.addEventListener('click', () =>{
             const temp = new newNote('A short title', '', false)
+            noteObject.push(temp)
             const element = utils.notes(temp.title, temp.notes, temp.finished, taskList)
+            temp.id = element.id
             parent.appendChild(element)
-            console.log(taskList)
         })
     }
     getIndex (value:HTMLBodyElement) {
