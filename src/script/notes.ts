@@ -2,6 +2,8 @@ const book = require('../img/book.svg');
 import { utils } from "..";
 import { taskList } from "..";
 import { noteObject } from "..";
+import { mainBucket } from "./relations"
+const MainBucket = new mainBucket
 
 
 export class newNote {
@@ -87,11 +89,14 @@ export class buttonEvents {
     addTask (parent:Element,) {
         const add = document.querySelector('.navbar__addItem')
         add.addEventListener('click', () =>{
-            const temp = new newNote('A short title', '', false)
+            const temp = new newNote(`a short title ${noteObject.length}`, '', false)
             noteObject.push(temp)
             const element = utils.notes(temp.title, temp.notes, temp.finished, taskList)
             temp.id = element.id
             parent.appendChild(element)
+            //test to see if i could hold the array
+            //MainBucket.children = noteObject
+            //console.log(MainBucket.children)
         })
     }
     getIndex (value:HTMLBodyElement) {

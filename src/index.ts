@@ -10,6 +10,7 @@ treeUtils.setCurrentBucket()
 const rel = new relations
 export let taskList = rel.existingTask
 export let noteObject = rel.objectList
+export let taskBody = rel.taskBody
 
 export const utils = new domutil
 const buttonEvent = new buttonEvents

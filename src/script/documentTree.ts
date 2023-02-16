@@ -1,9 +1,14 @@
 import { utils } from ".."
+
 // gets the button clicked on to reference the fileID
 export class documentTreeEvents {
+    appendSubBucket () {
+        
+    }
+
     buildList (object:string) {
         if (object=='file'){
-            
+
         }
     }
 

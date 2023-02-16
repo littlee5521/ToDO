@@ -20,6 +20,12 @@ export class mainBucket  {
 export let homeBucket = new mainBucket
 
 export class relations {
+    //     gets task to se the id
     existingTask:string[] = []
+
+    //saves the actual note
     objectList:object[] = []
+
+    //the strcutre of the current task
+    taskBody:object[] = []
 }
