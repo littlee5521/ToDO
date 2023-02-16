@@ -159,3 +159,34 @@ body {
   display: block;
   margin-left: 5px;
 }
+
+.dir__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.dir__icons {
+  max-height: 1.5vw;
+  min-height: 16px;
+}
+.dir__files {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.folderbtn {
+  height: fit-content;
+  background-color: #b9b1af;
+  border: white 2px solid;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 12px;
+}
+.folderbtn:hover {
+  background-color: #706c6b;
+}
+.folderbtn:active {
+  border: white 2px solid;
+  border-left: none;
+  border-top: none;
+}

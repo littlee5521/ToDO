@@ -2,8 +2,6 @@ const book = require('../img/book.svg');
 import { utils } from "..";
 import { taskList } from "..";
 import { noteObject } from "..";
-import { mainBucket } from "./relations"
-const MainBucket = new mainBucket
 
 
 export class newNote {

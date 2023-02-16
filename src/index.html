@@ -23,12 +23,20 @@
     <main class="content">
       <section class="content__directory">
         <ul id="home" class="dir-body">
-          <li><button class="dir__button">Home/</button></li>
-          <ul id="child">
-            <li><button class="dir__button">Hello</button></li>
-            <li><button class="dir__button">hello</button></li>
-          </ul>
-        </ul>
+          <li class="dir__wrapper">
+            <button class="dir__button">Home/</button>
+            <div class="dir__files">
+              <button class="folderbtn">
+                <img
+                  src="./img/fileIcon.svg"
+                  alt=""
+                  class="dir__icons"
+                /></button
+              ><button class="folderbtn">
+                <img src="./img/folderIcon.svg" alt="" class="dir__icons" />
+              </button>
+            </div>
+          </li>
       </section>
       <section class="content__notes"></section>
     </main>

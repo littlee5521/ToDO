@@ -1,7 +1,12 @@
 import { utils } from ".."
-
+import { rel } from ".."
+import { mainBucket } from "./relations"
 // gets the button clicked on to reference the fileID
 export class documentTreeEvents {
+    newFile (currentBucket:string, parentObj:object[]) {
+        parentObj.push( rel.taskBody)
+    }
+
     appendSubBucket () {
         
     }
@@ -17,8 +22,10 @@ export class documentTreeEvents {
         fileList.forEach(item =>{
             item.addEventListener('click', () =>{
                 utils.currentBucket = item.parentElement.parentElement.id
-                console.log(utils.currentBucket)
+
             })
         })
     }
+
+    
 }

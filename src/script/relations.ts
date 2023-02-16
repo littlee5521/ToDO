@@ -13,11 +13,10 @@ export class bucket {
 //        a parent 
 export class mainBucket  {
     id:string = 'main'
-    children:object
+    children:object[] =[]
     type = 'folder'
 }
 
-export let homeBucket = new mainBucket
 
 export class relations {
     //     gets task to se the id

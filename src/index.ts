@@ -4,10 +4,13 @@ import {domutil} from './script/notes'
 import {relations} from './script/relations'
 import { buttonEvents } from './script/notes';
 import { documentTreeEvents } from './script/documentTree';
+const fileIco = require('./img/fileIcon.svg')
+const folderIco = require('./img/folderIcon.svg')
+
 
 const treeUtils = new documentTreeEvents
 treeUtils.setCurrentBucket()
-const rel = new relations
+export const rel = new relations
 export let taskList = rel.existingTask
 export let noteObject = rel.objectList
 export let taskBody = rel.taskBody
